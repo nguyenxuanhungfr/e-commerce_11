@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :products
   resources :comments
   resources :carts
+  resources :orders
   namespace :admin do
     root "static_pages#home"
     get "/login", to: "sessions#new"
