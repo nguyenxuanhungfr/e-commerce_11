@@ -1,9 +1,9 @@
 <a href="#" class="cart-icon"><%= t "cart" %>
   <span class="cart_no">
-    <%= @count_product_cart || 0 %>
+    <%= @count_product_cart %>
   </span>
 </a>
-<% if @products_cart %>
+<% unless @cart.empty? %>
   <ul class="option-cart-item">
     <% @products_cart.each do |product, quantity| %>
       <li>
@@ -27,3 +27,4 @@
     </li>
   </ul>
 <% end %>
+
