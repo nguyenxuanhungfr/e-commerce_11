@@ -5,16 +5,16 @@ class User < ApplicationRecord
   has_many :orders
   has_many :ratings
 
-  before_save :downcase_email
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
-  validates :name, presence: true,
-   length: {maximum: Settings.validate.name_max_length}
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true,
-    length: {maximum: Settings.validate.email_max_length},
+  before_save{email.downcase!}
+
+  validates :name, presence: true, length: {maximum: 50}
+  validates :role, presence: true
+  validates :email, presence: true, length: {maximum: 255},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
-  validates :password, presence: true,
-    length: {minimum: Settings.validate.min_length_password}
+  validates :password, length: {minimum: 6}, allow_nil: true
+  scope :user_info, ->{select :id, :name, :email, :role}
 
   has_secure_password
 
