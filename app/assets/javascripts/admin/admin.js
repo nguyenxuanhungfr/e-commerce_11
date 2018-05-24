@@ -1,3 +1,4 @@
+/*
 //= require jquery
 //= require bootstrap
 //= require toastr
@@ -5,3 +6,4 @@
 //= require turbolinks
 //= require admin/dashboard.js
 //= require_self
+*/
