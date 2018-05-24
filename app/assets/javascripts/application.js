@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require bootstrap.min
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
 //= require jquery
 //= require jquery-1.10.2.min
 //= require jquery.carouFredSel-6.2.1-packed
@@ -21,3 +24,8 @@
 //= require script.min
 //= require toastr
 //= require turbolinks
+
+$(document).on('click', '.star_point', function(e){
+  toastr['success'](I18n.t("thank_rating"));
+  $('#create_rating').click();
+});

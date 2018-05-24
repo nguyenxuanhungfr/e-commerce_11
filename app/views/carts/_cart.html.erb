@@ -21,7 +21,7 @@
   </tr>
 </thead>
 <tbody>
-  <% if @products_cart %>
+  <% unless @cart.empty? %>
     <% @products_cart.each do |product,quantity| %>
       <tr>
         <td>
@@ -63,7 +63,8 @@
   </tbody>
   <tfoot>
     <tr>
-      <span class="total"><%= t "total" %> <strong id="total"><%= number_format @total %></strong></span>
+      <span class="total"><%= t "total" %>
+      <strong id="total"><%= number_format @total || 0 %></strong></span>
       <td colspan="6">
         <%= link_to t("continue_shoping"), root_path, class: "pull-left button" %>
         <%= link_to t("checkout"), new_order_path, class: "pull-right button" %>

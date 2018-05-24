@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :users
   resources :products
   resources :comments
+  resources :ratings
   resources :carts
   resources :orders
   namespace :admin do

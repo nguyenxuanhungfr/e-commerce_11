@@ -1482,7 +1482,9 @@ ul.dropdown-menu>li>a:hover {
     min-height: 87px;
 }
 
-
+#create_rating{
+  display:none;
+}
 /*left bar */
 
 .leftbar {
