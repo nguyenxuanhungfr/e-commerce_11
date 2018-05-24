@@ -1,0 +1,49 @@
+<%= provide :title, t("list_categories") %>
+<div class="row">
+  <div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="overflow_hidden">
+          <h1 class="float_left"><%= t "list_categories" %></h1>
+          <%= link_to t("add_category"), new_admin_category_path, class: "btn btn-primary float_right" %>
+        </div>
+        <div class="nav search-row top_menu_parents" id="top_menu">
+          <%= search_form_for @q, url: admin_categories_path do |f| %>
+            <%= f.search_field :name_cont,class: "form-control sinput sinput_search" %>
+            <%= button_tag type: "submit", class: "btn btn-primary button_search", name: nil do %>
+              Search
+            <% end %>
+          <% end %>
+          <h3 class="title"><strong><%= t "Total Users" %></strong> <span class="red_color"><%= @categories.present? ? @categories.size : "0" %></span></h3>
+        </div>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>
+                <%= t "STT" %>
+              </th>
+              <th>
+                <%= t "categories" %>
+              </th>
+              <th>
+                <%= t "status" %>
+              </th>
+              <th>
+                <%= t "Create Date" %>
+              </th>
+              <th>
+                <%= t "actions" %>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render "category", categories: @categories %>
+          </tbody>
+        </table>
+        <div class="margin_bottom20px float_right">
+          <%= paginate @categories, theme: 'twitter-bootstrap-3' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

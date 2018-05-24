@@ -1,0 +1,48 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item nav-profile">
+      <%= link_to edit_admin_user_path(@current_admin), class: "nav-link" do %>
+        <div class="nav-profile-image">
+          <%= image_tag @current_admin.image.url if @current_admin.image.url.present? %>
+          <span class="login-status online"></span>
+          <!--change to offline or busy as needed-->
+        </div>
+        <div class="nav-profile-text d-flex flex-column">
+          <span class="font-weight-bold mb-2"><%= @current_admin.name %></p></span>
+          <span class="text-secondary text-small">Project Manager</span>
+        </div>
+        <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to admin_root_path, class: "nav-link" do %>
+        <span class="menu-title">Dashboard</span>
+        <i class="mdi mdi-home menu-icon"></i>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to admin_orders_path, class: "nav-link" do %>
+        <span class="menu-title">Orders</span>
+        <i class="mdi mdi-calendar-blank menu-icon"></i>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to admin_products_path, class: "nav-link" do %>
+        <span class="menu-title">Products</span>
+        <i class="mdi mdi-shopping menu-icon"></i>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to admin_users_path, class: "nav-link" do %>
+        <span class="menu-title">Users</span>
+        <i class="mdi mdi-account-multiple menu-icon"></i>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to admin_categories_path, class: "nav-link" do %>
+        <span class="menu-title">Categories</span>
+        <i class="mdi mdi-table-large menu-icon"></i>
+      <% end %>
+    </li>
+  </ul>
+</nav>

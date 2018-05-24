@@ -802,8 +802,10 @@ ul.dropdown-menu>li>a:hover {
 .option-cart-item {
     position: absolute;
     top: 35px;
+    max-height: 250px;
+    overflow-y: scroll;
     right: 24px;
-    width: 258px;
+    width: 285px;
     border: 1px solid #f7544a;
     -webkit-border-radius: 10px;
     border-radius: 10px;
@@ -894,6 +896,7 @@ ul.dropdown-menu>li>a:hover {
 }
 
 .option-cart-item .checkout {
+    margin-left: 1%;
     float: right;
 }
 
@@ -1391,13 +1394,19 @@ ul.dropdown-menu>li>a:hover {
 }
 
 .list_bottom {
-    position: relative;
-    width: 100%;
-    padding-top: 10px;
+  position: relative;
+  width: 100%;
+  padding-top: 10px;
 }
 
 .list_bottom .button_group {
-    width: auto;
+  width: auto;
+}
+
+.products .price_old {
+  text-align: center;
+  font-size: 15px;
+  text-decoration: line-through;
 }
 
 .product-list-description .price {
@@ -3459,4 +3468,31 @@ option {
     .grandtotal span {
         margin-bottom: 20px;
     }
+}
+.user_comment{
+    overflow: hidden;
+    max-height: 287px;
+    overflow-y: scroll;
+    margin-bottom: 12px;
+}
+.form_search_fe li{
+    display: inline-block;
+}
+.form_search_fe li select{
+    margin-left: 0
+}
+.form_search_fe li:last-child input{
+    vertical-align: baseline;
+}
+.mar_top10{
+    margin-top: 10px;
+}
+.float_right{
+    float: right;
+}
+.preview-small{
+    text-align: center;
+}
+.fb-like{
+    margin: 10px 0;
 }
