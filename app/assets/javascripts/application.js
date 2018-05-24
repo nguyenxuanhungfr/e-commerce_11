@@ -12,4 +12,10 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
+//= require jquery-1.10.2.min
+//= require jquery.easing.1.3
+//= require bootstrap.min
+//= require jquery.sequence-min
+//= require jquery.carouFredSel-6.2.1-packed
+//= require jquery.flexslider
+//= require script.min
