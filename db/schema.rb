@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20180524023506) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
-    t.string "status"
+    t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180524023506) do
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.bigint "product_id"
-    t.string "description"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_comments_on_product_id"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20180524023506) do
     t.integer "new_price"
     t.text "description"
     t.text "attribute"
-    t.integer "avg_poit"
+    t.float "average_point", limit: 24
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20180524023506) do
   create_table "ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "product_id"
     t.bigint "user_id"
-    t.integer "poit"
+    t.integer "point"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_ratings_on_product_id"
@@ -83,8 +83,8 @@ ActiveRecord::Schema.define(version: 20180524023506) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.date "birtday"
-    t.boolean "role"
+    t.date "birthday"
+    t.integer "role"
     t.string "remember_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
