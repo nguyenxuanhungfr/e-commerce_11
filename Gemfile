@@ -12,6 +12,7 @@ gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "faker"
 gem "figaro"
+gem 'jquery-datatables-rails'
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "material_icons"

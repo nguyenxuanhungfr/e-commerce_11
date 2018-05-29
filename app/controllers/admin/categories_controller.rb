@@ -4,7 +4,7 @@ module Admin
     before_action :load_category, except: %i(index new create)
 
     def index
-      @categories = Category.paginate page: params[:page], per_page: Settings.setting_model.page_size
+      @categories = Category.paginate page: params[:page]
     end
 
     def show; end

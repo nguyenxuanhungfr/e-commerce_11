@@ -7,7 +7,7 @@
           <h1 class="float_left"><%= t "list_categories" %></h1>
           <%= link_to t("add_category"), new_admin_category_path, class: "btn btn-primary float_right" %>
         </div>
-        <table class="table table-bordered">
+        <table class="table table-bordered datatable1">
           <thead>
             <tr>
               <th>
@@ -28,9 +28,6 @@
             <%= render @categories %>
           </tbody>
         </table>
-        <div class="margin_bottom20px float_right">
-          <%= will_paginate %>
-        </div>
       </div>
     </div>
   </div>
