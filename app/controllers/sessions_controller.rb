@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :load_menu
+
   def new; end
 
   def create

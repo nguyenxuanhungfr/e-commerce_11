@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem "bcrypt", "~> 3.1.7"
+gem "bootstrap-kaminari-views"
 gem "bootstrap-sass", "3.3.7"
 gem "carrierwave", "1.2.2"
 gem "coffee-rails", "~> 4.2"
@@ -19,7 +20,9 @@ gem "mini_magick", "4.7.0"
 gem "mysql2"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.6"
+gem "safe_attributes"
 gem "sass-rails", "~> 5.0"
+gem "toastr-rails"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 
