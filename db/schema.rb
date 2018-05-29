@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 20180524023506) do
     t.boolean "status"
     t.integer "price"
     t.integer "new_price"
+    t.integer "quantity"
+    t.string "images"
     t.text "description"
     t.text "attribute"
     t.float "average_point", limit: 24
