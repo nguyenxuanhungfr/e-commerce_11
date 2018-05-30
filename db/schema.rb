@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20180524023506) do
     t.integer "price"
     t.integer "new_price"
     t.integer "quantity"
+    t.integer "discount"
     t.string "images"
     t.text "description"
     t.text "attribute"
