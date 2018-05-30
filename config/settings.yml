@@ -2,3 +2,6 @@ validate:
   email_max_length: 255
   name_max_length: 255
   min_length_password: 6
+settings:
+  per_page: 4
+  limit_product: 12
