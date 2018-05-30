@@ -6,6 +6,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.integer :price
       t.integer :new_price
       t.integer :quantity
+      t.integer :discount
       t.string :images
       t.text :description
       t.text :attribute
