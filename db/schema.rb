@@ -43,20 +43,21 @@ ActiveRecord::Schema.define(version: 20180601014243) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "order_detais", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "order_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "quantity"
     t.integer "price"
     t.bigint "order_id"
     t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_order_detais_on_order_id"
-    t.index ["product_id"], name: "index_order_detais_on_product_id"
+    t.index ["order_id"], name: "index_order_details_on_order_id"
+    t.index ["product_id"], name: "index_order_details_on_product_id"
   end
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "address"
     t.string "phone"
+    t.boolean "status"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -104,8 +105,8 @@ ActiveRecord::Schema.define(version: 20180601014243) do
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "products"
-  add_foreign_key "order_detais", "orders"
-  add_foreign_key "order_detais", "products"
+  add_foreign_key "order_details", "orders"
+  add_foreign_key "order_details", "products"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "categories"
   add_foreign_key "ratings", "products"

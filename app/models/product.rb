@@ -1,8 +1,8 @@
 class Product < ApplicationRecord
   belongs_to :category
-  has_many :ratings
-  has_many :comments
-  has_many :order_details
+  has_many :ratings, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :order_details, dependent: :destroy
 
   scope :order_product, ->{order created_at: :desc}
   mount_uploader :images, PictureUploader
