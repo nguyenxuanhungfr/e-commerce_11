@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   post "/add_to_cart/:id", to: "carts#add_to_cart", as: "add_to_cart"
   resources :users
+  resources :products
+  resources :comments
   resources :carts
   namespace :admin do
     root "static_pages#home"

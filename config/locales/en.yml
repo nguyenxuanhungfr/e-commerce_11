@@ -89,6 +89,7 @@ en:
   add_to_cart: "Add To Cart"
   checkout: "CheckOut"
   not_found_cate: "Not found Category"
+  not_found_product: "Not found Product"
   hot: "Hot"
   our: "Our"
   brands: "Brands"
@@ -107,3 +108,9 @@ en:
   customer: "Customer"
   support: "support"
   value_email: "nguyen.huu.hau@framgia.com"
+  submit: "Submit"
+  comments: "Create comments success"
+  comments_error: "Create comments error"
+  need_login: "You need login before create comment"
+  your_name: "Your Name"
+

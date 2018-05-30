@@ -1,8 +1,6 @@
 <%= form_for :session , url:login_path do |f| %>
   <div class="col-md-6 col-sm-6">
-   <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %> messages_notification"><%= message %></div>
-    <% end %>
+    <%= render "flash/flash" %>
     <div class="your-details">
       <h5>
         <%= t "login" %>

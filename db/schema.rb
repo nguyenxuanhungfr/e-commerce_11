@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20180524023506) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
-    t.string "status"
+    t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -85,8 +85,9 @@ ActiveRecord::Schema.define(version: 20180524023506) do
     t.string "email"
     t.string "password_digest"
     t.date "birthday"
-    t.integer "role"
+    t.integer "role", default: 2
     t.string "remember_digest"
+    t.string "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
