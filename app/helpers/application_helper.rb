@@ -17,6 +17,15 @@ module ApplicationHelper
   end
 
   def gravatar_for product
-    image_tag(product.images,alt: product.name)
+    image_tag product.images,alt: product.name
+  end
+
+  def get_user_images comment
+    if comment.images.present?
+      image = comment.images
+    else
+      image = "https://png.icons8.com/dotty/2x/administrator-male.png"
+    end
+    image_tag image
   end
 end
