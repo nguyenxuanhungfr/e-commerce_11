@@ -45,7 +45,7 @@ module Admin
     private
 
     def user_params
-      params.require(:user).permit :name, :email, :password, :role, :password_confirmation
+      params.require(:user).permit :name, :email, :picture, :password, :role, :password_confirmation
     end
 
     def load_user
