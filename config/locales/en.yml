@@ -131,3 +131,4 @@ en:
   comments_error: "Create comments error"
   need_login: "You need login before create comment"
   your_name: "Your Name"
+  form_contains: "The form contains"

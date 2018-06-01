@@ -3,5 +3,7 @@ class Category < ApplicationRecord
 
   enum status: [:hide, :display]
 
-  scope :ordered, ->{order(created_at: :desc)}
+  validates :status, presence: true
+
+  scope :ordered, ->{order created_at: :desc}
 end
