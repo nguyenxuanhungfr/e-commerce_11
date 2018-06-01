@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   resources :carts
   namespace :admin do
     root "static_pages#home"
+    resources :categories
   end
 end
