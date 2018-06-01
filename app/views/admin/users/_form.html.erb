@@ -6,18 +6,19 @@
   <%= f.number_field :role, min: 1, max: 2, class: 'form-control' %>
   <%= f.label :email %>
   <%= f.email_field :email, class: "form-control" %>
-  <div class="form-group view_img_parent">
-    <div class="view-img">
-      <img src="">
+  <div class="form-group picture_user">
+    <%= f.label :picture %>
+    <br/>
+    <%= image_tag f.object.picture_url %>
+    <div class="upload-btn-wrapper">
+      <button class="btn">Upload</button>
+      <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :picture %>
-    <br/>
-    <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %>
   </div>
-  <%= f.label :password %>
-  <%= f.password_field :password, class: "form-control" %>
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: "form-control" %>
   <div class="center">
