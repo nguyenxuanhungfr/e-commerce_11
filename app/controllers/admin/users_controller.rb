@@ -5,8 +5,7 @@ module Admin
       only: %i(show edit update destroy)
 
     def index
-      @users = User.user_info.paginate page: params[:page],
-        per_page: Settings.setting_model.page_size
+      @users = User.user_info.page(params[:page]).per Settings.settings.per_page
     end
 
     def show; end

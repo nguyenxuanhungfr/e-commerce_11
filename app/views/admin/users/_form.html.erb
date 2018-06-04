@@ -7,16 +7,16 @@
   <%= f.label :email %>
   <%= f.email_field :email, class: "form-control" %>
   <div class="form-group picture_user">
-    <%= f.label :picture %>
+    <%= f.label :image %>
     <br/>
-    <% if f.object.picture_url.present? %>
-      <%= image_tag f.object.picture_url %>
+    <% if f.object.image_url.present? %>
+      <%= image_tag f.object.image_url %>
     <% else %>
       <img src="" alt="">
     <% end %>
     <div class="upload-btn-wrapper">
       <button class="btn">Upload</button>
-      <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
+      <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
     </div>
   </div>
   <div class="form-group">

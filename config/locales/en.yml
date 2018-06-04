@@ -66,3 +66,13 @@ en:
   upadte_profile: "Upadte profile"
   save_change: "Save changes"
   edit_user: "Edit user"
+  list_products: "List products"
+  add_product: "Add product"
+  create_products: "Create product"
+  warning_size: "should be less than 5MB"
+  Status: "Status"
+  save_product: "Save_product"
+  edit_product: "Edit product"
+  keyword: "Search ..."
+  Enter_name: "Enter name"
+
