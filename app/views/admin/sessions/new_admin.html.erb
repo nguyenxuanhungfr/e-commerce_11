@@ -16,13 +16,6 @@
       <%= f.password_field :password, class: "login__input pass form-control", id: "Passwod", placeholder: "Password" %>
       <i class="view-pass fa fa-eye" style="  display: none;"></i>
     </div>
-    <div class="login__row">
-      <%= f.label :remember_me, class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %>
-        <span class="font16_clw">Remember me on this computer</span>
-      <% end %>
-    </div>
-
     <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %> danger_login"><%= message %></div>
     <% end %>

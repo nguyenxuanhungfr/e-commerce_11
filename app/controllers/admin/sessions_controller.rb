@@ -1,26 +1,25 @@
 module Admin
   class SessionsController < BaseController
     layout "admin/layouts/application"
-    def new
-      return unless logged_in?
+    def new_admin
+      return unless logged_in_admin?
       flash[:info] = t "logged_in"
       redirect_to admin_root_url
     end
 
-    def create
-      user = User.find_by email: params[:session][:email].downcase
-      if user && user.authenticate(params[:session][:password]) && user.role == Settings.setting_model.role_admin
-        log_in user
-        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+    def create_admin
+      admin = User.find_by email: params[:session][:email].downcase
+      if admin && admin.authenticate(params[:session][:password]) && admin.role == Settings.setting_model.role_admin
+        log_in_admin admin
         redirect_back_or admin_root_url
       else
         flash.now[:danger] = t "invalid"
-        render :new
+        render :new_admin
       end
     end
 
-    def destroy
-      log_out if logged_in?
+    def destroy_admin
+      log_out_admin if logged_in_admin?
       redirect_to admin_root_url
     end
   end

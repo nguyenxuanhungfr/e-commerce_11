@@ -4,6 +4,10 @@ class ProductsController < ApplicationController
   def show
     @support = Supports::ProductSupport.new(@product)
     @comment = Comment.new
+
+    if logged_in?
+      @rating = current_user.ratings.find_by(product_id: @product.id) || Rating.new
+    end
   end
 
   private

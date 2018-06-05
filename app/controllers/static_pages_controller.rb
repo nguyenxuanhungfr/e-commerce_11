@@ -4,5 +4,4 @@ class StaticPagesController < ApplicationController
   def home
     @products = Product.order_product.limit Settings.settings.limit_product
   end
-  def home; end
 end

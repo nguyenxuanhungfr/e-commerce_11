@@ -18,8 +18,11 @@ class Product < ApplicationRecord
       only_integer: true}
   validates :description, presence: true
   validates :category_id, presence: true
-
+  scope :order_product, ->{order created_at: :desc}
   scope :ordered, ->{order created_at: :asc}
   scope :search_by_name, ->(name){where("name LIKE ? ", "%#{name}%") if name.present?}
   scope :filter_by_category, ->(category_id){where(category_id: category_id) if category_id.present?}
+  def avg_rating
+    ratings.average(:point)
+  end
 end
