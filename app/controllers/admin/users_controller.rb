@@ -5,7 +5,7 @@ module Admin
       only: %i(show edit update destroy)
 
     def index
-      @users = User.user_info.page(params[:page]).per Settings.settings.per_page
+      @users = User.search_by_name(params[:search]).user_info.page(params[:page]).per Settings.settings.per_page
     end
 
     def show; end
@@ -44,7 +44,7 @@ module Admin
     private
 
     def user_params
-      params.require(:user).permit :name, :email, :picture, :password, :role, :password_confirmation
+      params.require(:user).permit :name, :email, :image, :password, :role, :password_confirmation
     end
 
     def load_user

@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   has_many :comments
   has_many :order_details
   has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images,
+  accepts_nested_attributes_for :images, allow_destroy: true,
     reject_if: ->(attrs) {attrs['image_url'].blank?}
 
   validates :name, presence: true, uniqueness: {case_sensitive: false},
