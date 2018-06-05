@@ -21,3 +21,7 @@
 //= require jquery.elevatezoom.js
 //= require toastr
 //= require turbolinks
+$(document).on('click', '.star_point', function(e){
+  toastr['success']('Thank you rating product');
+  $('#Scomit').click();
+});
