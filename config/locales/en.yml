@@ -93,8 +93,10 @@ en:
   welcome_click_activate: "Welcome to the Sample App! Click on the link below to activate your account:"
   full_name: Full Name
   register: Register
-  empty_cart: "Empty cart"
+  empty_cart: "Your cart is empty"
   success_add_cart: "Add to cart success"
+  success_update_cart: "Update cart success"
+  success_delete_cart: "Delete cart success"
   shopping_cart: "Shopping Cart"
   images: "Images"
   details: "Details"
@@ -102,6 +104,7 @@ en:
   quantity: "Quantity"
   continue_shoping: "Continue Shopping"
   updates_shoping: "Update Shopping Cart"
+  checkout: "Checkout"
   cart: "Cart"
   total: "Total"
   add_to_cart: "Add To Cart"

@@ -22,11 +22,6 @@ module SessionsHelper
     end
   end
 
-  def required_cart?
-    flash[:danger] = t :empty_cart
-    session[:cart].present?
-  end
-
   def logged_in?
     current_user.present?
   end
