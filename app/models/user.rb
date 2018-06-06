@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :orders
   has_many :ratings
 
+  mount_uploader :image, PictureUploader
+
   enum status: [:user, :admin]
 
   before_save :downcase_email
