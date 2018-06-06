@@ -18,6 +18,7 @@ class Product < ApplicationRecord
       only_integer: true}
   validates :description, presence: true
   validates :category_id, presence: true
+  scope :status_true, ->{where(status: 1)}
   scope :order_product, ->{order created_at: :desc}
   scope :ordered, ->{order created_at: :asc}
   scope :search_by_name, ->(name){where("name LIKE ? ", "%#{name}%") if name.present?}
