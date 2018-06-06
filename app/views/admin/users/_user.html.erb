@@ -3,7 +3,7 @@
     <%= user.name %>
   </td>
   <td>
-    <%= image_tag user.image.url if user.image? %>
+    <%= get_user_images user %>
   </td>
   <td>
     <%= user.email %>
