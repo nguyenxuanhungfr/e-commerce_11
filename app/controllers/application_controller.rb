@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
   def load_menu
     @categories = Category.display
+    @categories_option = Category.all.where(status: true).map{|c| [c.name, c.id]}
   end
 
   def session_cart
