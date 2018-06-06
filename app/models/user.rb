@@ -19,7 +19,8 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true,
     length: {minimum: Settings.validate.min_length_password}
-
+  scope :user_info, ->{select :id, :name, :image, :email, :role, :created_at}
+  scope :search_by_name, ->(name){where("name LIKE ? ", "%#{name}%") if name.present?}
   has_secure_password
 
   def self.digest string

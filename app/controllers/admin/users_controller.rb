@@ -3,7 +3,7 @@ class Admin::UsersController < Admin::BaseController
   before_action :load_user, only: %i(show edit update destroy)
 
   def index
-    @users = User.user_info.page(params[:page]).per Settings.settings.per_page
+    @users = User.search_by_name(params[:search]).user_info.page(params[:page]).per Settings.settings.per_page
   end
 
   def new
