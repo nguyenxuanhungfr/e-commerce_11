@@ -3469,3 +3469,9 @@ option {
         margin-bottom: 20px;
     }
 }
+.user_comment{
+    overflow: hidden;
+    max-height: 287px;
+    overflow-y: scroll;
+    margin-bottom: 12px;
+}

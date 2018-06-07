@@ -26,6 +26,7 @@ class Product < ApplicationRecord
   scope :filter_by_status, ->(status){where(status: status) if status.present?}
   scope :filter_by_higher_price, ->(higher_price){where("price >= ?", higher_price) if higher_price.present?}
   scope :filter_by_less_price, ->(less_price){where("price <= ?", less_price) if less_price.present?}
+
   def avg_rating
     ratings.average(:point)
   end
