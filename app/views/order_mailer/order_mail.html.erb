@@ -24,7 +24,7 @@
       <% @total += product.new_price * quantity %>
       <tr>
         <td>
-          <%= image_tag product.images, alt: product.name, size: "70" %>
+          <%= gravatar_for product %>
         </td>
         <td>
           <div class="shop-details">
@@ -35,7 +35,7 @@
         </td>
         <td>
           <h5>
-            <%= product.new_price %>
+            <%= number_format product.new_price %>
           </h5>
         </td>
         <td>
@@ -44,7 +44,7 @@
         <td>
           <h5 class="total_money">
             <strong class="red">
-            <%= product.new_price * quantity %>
+            <%= number_format product.new_price * quantity %>
             </strong>
           </h5>
         </td>
@@ -52,6 +52,6 @@
     <% end %>
   <% end %>
 </tbody>
-<h1><%= t "total" %> : <%= @total %><h1>
+<h1><%= t "total" %> : <%= number_format @total %><h1>
 <h2><%= t "name" %> : <%= @user.name %></h2>
 <h2><%= t "address" %> : <%= @order.address %></h2>
