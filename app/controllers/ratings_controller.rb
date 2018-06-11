@@ -10,7 +10,7 @@ class RatingsController < ApplicationController
   	  respond_to do |format|
         format.js {render "rating.js.erb"}
       end
-    else
+  	else
       flash[:danger] = t "error_inser_rating"
       redirect_to root_url
     end
