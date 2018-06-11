@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :find_id_product, :load_menu
+  before_action :load_product, :load_menu, :set_search
   before_action :check_cart_existence, only: [:index]
 
   def index; end
@@ -42,7 +42,7 @@ class CartsController < ApplicationController
     end
   end
 
-  def find_id_product
+  def load_product
     @id = params[:id]
     @product = Product.find_by @id
     return if @product
