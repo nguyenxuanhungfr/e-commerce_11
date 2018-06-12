@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post "/add_to_cart/:id", to: "carts#add_to_cart", as: "add_to_cart"
   resources :users
   resources :products
+  resources :static_pages
   resources :comments
   resources :ratings
   resources :carts

@@ -11,21 +11,53 @@
       <div class="col-md-10 col-sm-10">
         <div class="header_top">
           <div class="row">
-            <div class="col-md-offset-9 col-md-3">
+            <div class="col-md-9">
+              <%= search_form_for @search, url: static_pages_path do |f| %>
+                <ul class="form_search_fe">
+                  <li>
+                    <%= f.select :category_id_eq,
+                       options_for_select(@categories_option),
+                       {class: "form-control",
+                       include_blank: t("Choose category")} %>
+                  </li>
+                  <li>
+                    <%= search_form_for @search do |field| %>
+                      <%= field.grouping_fields(field.object.new_grouping) do |grouping_field| %>
+                        <%= grouping_field.condition_fields(grouping_field.object.new_condition) do |condition_field| %>
+                          <%= condition_field.attribute_fields do |attribute_field| %>
+                            <%= attribute_field.attribute_select only: %i(id) %>
+                          <% end %>
+                          <%= condition_field.predicate_select only: %i(cont lt gt) %>
+                          <%= condition_field.value_fields do |value_field| %>
+                            <%= value_field.text_field :value %>
+                          <% end %>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= f.submit type: t("submit"), class: "btn btn-primary", name: nil do %>
+                      <%= t "Search" %>
+                    <% end %>
+                  </li>
+                </ul>
+              <% end %>
+            </div>
+            <div class="col-md-3">
               <ul class="usermenu">
                 <% if logged_in? %>
-                <li class="dropdown">
-                  <%= link_to session[:user_name], "",{class: "log"} %>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <%= link_to t("logout"), logout_path, method: :delete %>
-                    </li>
-                    <li class="divider"></li>
-                  </ul>
-                </li>
+                  <li class="dropdown">
+                    <%= link_to session[:user_name], "" %>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <%= link_to t("logout"), logout_path, method: :delete %>
+                      </li>
+                      <li class="divider"></li>
+                    </ul>
+                  </li>
                 <% else %>
-                <li><%= link_to t("acount"), login_path,{class:  "log"} %></li>
-                <li><%= link_to t("Register"), new_path,{class: "log"} %></li>
+                  <li><%= link_to t("acount"), login_path,{class:  "login"} %></li>
+                  <li><%= link_to t("Register"), new_path,{class: "register"} %></li>
                 <% end %>
               </ul>
             </div>
@@ -34,34 +66,9 @@
         <div class="clearfix"></div>
         <div class="header_bottom">
           <ul class="option">
-            <%= form_tag root_path, method: :get do %>
-              <li>
-                <%= select_tag :category_id,
-                  options_for_select(@categories_option),
-                    {class: "form-control"} %>
-              </li>
-              <li>
-                  <%= text_field_tag :search, params[:search],
-                    class: "form-control sinput",placeholder: t("Enter_name") %>
-              </li>
-              <li>
-                  <%= text_field_tag :less_price, params[:less_price],
-                    class: "form-control sinput",placeholder: t("Price_lower") %>
-              </li>
-              <li>
-                  <%= text_field_tag :higher_price, params[:higher_price],
-                    class: "form-control sinput",placeholder: t("Price_higher") %>
-              </li>
-              <li>
-                <%= button_tag type: "submit", class: "btn btn-primary",
-                  name: nil do %>
-                  <%= t "Search" %>
-                <% end %>
-              </li>
-              <li class="option-cart">
-                <%= render "products/cart_header" %>
-              </li>
-            <% end %>
+            <li class="option-cart">
+              <%= render "products/cart_header" %>
+            </li>
           </ul>
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only"><%= t "navigation" %></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
