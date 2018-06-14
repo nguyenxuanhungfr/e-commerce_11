@@ -13,10 +13,6 @@ class Supports::ProductSupport
     @images ||= @product.images
   end
 
-  def new_ratting
-    @rating ||= Rating.new
-  end
-
   def product_slibar
     @product_new ||= Product.order_product.limit Settings.settings.limit_product_slibar
   end
